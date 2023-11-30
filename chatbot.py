@@ -33,6 +33,6 @@ class Bot:
         return botReply
 
 # Main code
-myRailwaysChatBot = Bot(r'Multilingual_Railways_Chatbot\data')
+myRailwaysChatBot = Bot(r'Multilingual_Railways_Chatbot\data\indianRailwaysData.csv')
 reply = myRailwaysChatBot.chat("What is the Train Name which operates from Delhi to Jaipur")
 print(reply)
