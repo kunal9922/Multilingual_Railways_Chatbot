@@ -1,0 +1,47 @@
+Train Number,Train Name,From Station,To Station,Arrival Time,Departure Time,Platform,Distance (km),Ticket Price (INR)
+12345,Indian Express,New Delhi,Mumbai,04:00 AM,05:00 AM,Platform 12,1449,1200
+23456,Rajdhani Express,Mumbai,New Delhi,10:30 PM,11:30 PM,Platform 7,1449,1500
+34567,Chennai Superfast,Chennai,Bangalore,08:15 AM,09:15 AM,Platform 5,350,250
+45678,Howrah Mail,Kolkata,Chennai,09:30 AM,10:30 AM,Platform 1,1660,1000
+56789,Mysore Express,Bangalore,Mysore,08:45 AM,09:45 AM,Platform 3,139,100
+67890,Shatabdi Express,Delhi,Jaipur,12:00 PM,01:00 PM,Platform 8,303,350
+78901,Pune Duronto,Pune,Mumbai,09:30 AM,10:30 AM,Platform 2,192,180
+89012,Hyderabad Express,Hyderabad,Bangalore,11:15 AM,12:15 PM,Platform 4,578,420
+90123,Gujarat Mail,Mumbai,Ahmedabad,03:00 AM,04:00 AM,Platform 6,493,320
+10123,Chennai Express,Chennai,Hyderabad,05:30 AM,06:30 AM,Platform 2,675,450
+11234,Kolkata Rajdhani,Kolkata,New Delhi,09:00 PM,10:00 PM,Platform 9,1474,1700
+12345,Bangalore Superfast,Bangalore,Chennai,03:45 PM,04:45 PM,Platform 10,350,250
+13456,Jaipur Shatabdi,Jaipur,Delhi,08:00 AM,09:00 AM,Platform 5,307,300
+14567,Deccan Queen,Mumbai,Pune,06:30 AM,07:30 AM,Platform 3,192,150
+15678,Ahmedabad Express,,MumbaAhmedabadi,10:45 AM,11:45 AM,Platform 7,493,320
+16789,Chennai Mail,Chennai,Kolkata,04:30 PM,05:30 PM,Platform 4,1660,1200
+17890,Bangalore Rajdhani,Bangalore,New Delhi,07:00 PM,08:00 PM,Platform 6,2148,2000
+18901,Goa Express,Mumbai,Goa,08:15 AM,09:15 AM,Platform 12,502,400
+19012,Coimbatore Express,Coimbatore,Chennai,11:00 AM,12:00 PM,Platform 8,506,350
+20123,Hyderabad Rajdhani,Hyderabad,New Delhi,08:30 PM,09:30 PM,Platform 10,1692,1800
+21234,Bhubaneswar Mail,Bhubaneswar,Chennai,08:15 AM,09:15 AM,Platform 9,1242,1000
+22345,Kanpur Shatabdi,Kanpur,Delhi,06:45 AM,07:45 AM,Platform 3,441,400
+23456,Chandigarh Express,Chandigarh,Amritsar,08:30 AM,09:30 AM,Platform 5,249,220
+24567,Puri Superfast,Puri,Kolkata,07:00 AM,08:00 AM,Platform 7,500,450
+25678,Ahmedabad Duronto,Ahmedabad,Jaipur,02:45 PM,03:45 PM,Platform 1,634,550
+26789,Kolkata Superfast,Kolkata,Chennai,10:15 PM,11:15 PM,Platform 6,1678,1400
+27890,Mumbai Mail,Mumbai,Chennai,04:45 AM,05:45 AM,Platform 4,1335,1200
+28901,Delhi Duronto,Delhi,Mumbai,06:30 PM,07:30 PM,Platform 2,1449,1500
+29012,Pune Express,Pune,Hyderabad,09:00 AM,10:00 AM,Platform 12,623,550
+30123,Bhopal Shatabdi,Bhopal,Delhi,08:00 AM,09:00 AM,Platform 5,707,600
+31234,Kolkata Duronto,Kolkata,Delhi,09:30 PM,10:30 PM,Platform 3,1474,1600
+32345,Patna Express,Patna,Kolkata,11:00 AM,12:00 PM,Platform 1,577,500
+33456,Varanasi Mail,Varanasi,Kolkata,06:45 AM,07:45 AM,Platform 4,682,600
+34567,Rajkot Express,Rajkot,Ahmedabad,08:30 AM,09:30 AM,Platform 7,249,220
+35678,Chennai Duronto,Chennai,Mumbai,02:00 PM,03:00 PM,Platform 10,1294,1400
+36789,Amritsar Superfast,Amritsar,Delhi,08:45 AM,09:45 AM,Platform 2,448,400
+37890,Trivandrum Express,Trivandrum,Chennai,07:30 AM,08:30 AM,Platform 6,690,550
+38901,Kanpur Superfast,Kanpur,Delhi,05:15 PM,06:15 PM,Platform 8,437,400
+39012,Jaipur Express,Jaipur,Mumbai,06:00 AM,07:00 AM,Platform 5,1146,1200
+40123,Lucknow Shatabdi,Lucknow,Delhi,06:30 AM,07:30 AM,Platform 4,512,450
+41234,Kolkata Mail,Kolkata,Chennai,04:15 PM,05:15 PM,Platform 9,1660,1500
+42345,Ahmedabad Superfast,Ahmedabad,Mumbai,07:45 AM,08:45 AM,Platform 7,493,420
+43456,Mysore Shatabdi,Mysore,Bangalore,08:15 AM,09:15 AM,Platform 3,140,120
+44567,Chennai Rajdhani,Chennai,Delhi,09:30 PM,10:30 PM,Platform 1,1761,1800
+45678,Mumbai Superfast,Mumbai,Kolkata,05:30 AM,06:30 AM,Platform 5,1876,1600
+46789,Hyderabad Duronto,Hyderabad,Chennai,03:00 PM,04:00 PM,Platform 10,3400,900
