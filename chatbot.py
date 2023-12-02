@@ -19,12 +19,6 @@ class Bot:
         '''Chat method that takes natural language query parameter 
         and result in a single word'''
         
-        # Example of the user query
-        # "from Delhi to Jaipur what is the Train Departure time"
-        # "provide the ticket price of the train goes from Chennai to Bangalore "
-        # "what is train arrival time goes from Bangalore to Mysore"
-        # "tell me the distance from Mumbai to Ahmedabad by train"
-        # "show the train number goes from Pune to Mumbai"
         if not userQuery:
             return None
         
@@ -34,5 +28,12 @@ class Bot:
 
 # Main code
 myRailwaysChatBot = Bot(r'Multilingual_Railways_Chatbot\data\indianRailwaysData.csv')
+# Example of the user query
+# "from Delhi to Jaipur what is the Train Departure time"
+# "provide the ticket price of the train goes from Chennai to Bangalore "
+# "what is train arrival time goes from Bangalore to Mysore"
+# "tell me the distance from Mumbai to Ahmedabad by train"
+# "show the train number goes from Pune to Mumbai"
+
 reply = myRailwaysChatBot.chat("What is the Train Name which operates from Delhi to Jaipur")
 print(reply)
