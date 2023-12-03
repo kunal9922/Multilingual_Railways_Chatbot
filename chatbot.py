@@ -1,7 +1,4 @@
-import torch
-print(torch.__version__)
 """pipeline: Pipeline is methodology which we can use interfaces and model from hugging face transformer"""
-
 from transformers import pipeline
 import pandas as pd
 
