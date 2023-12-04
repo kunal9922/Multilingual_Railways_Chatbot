@@ -23,19 +23,30 @@ This repository contains the source code and resources for a railway's chatbot b
     git clone https://github.com/kunal9922/Multilingual_Railways_Chatbot.git
     cd Multilingual_Railways_Chatbot
     ```
-
-2. **Install Dependencies:**
+2. **Make an alias for Windows PowerShell** 
+    ```bash
+   New-Alias -Name python310 -value "yourPython3.10.exe path"
+   ```
+3. **Create a python Virtual Environment**
+    ```bash
+    python310 -m venv venvChatbotRailways
+    ```
+4. **Activate the virtual environment**
+    ```bash
+    venvChatbotRailways\Scripts\activate
+    ```
+5. **Install Dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
 
-3. **Run the Chatbot:**
+6. **Run the Chatbot:**
     ```bash
     python chatbot.py
     ```
 
-4. **Interact with the Chatbot:**
-    - Open a web browser and go to `http://localhost:5000` to interact with the chatbot through a simple web interface.
+7. **Interact with the Chatbot:**
+    - Open a web browser and go to `http://localhost:5000` to interact with the chatbot through a simple web interface. under developemnt
 
 ## Contribution Guidelines
 
