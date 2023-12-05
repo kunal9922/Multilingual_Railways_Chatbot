@@ -8,9 +8,9 @@ This repository contains the source code and resources for a railway's chatbot b
 
 ## Features
 
-- **Natural Language Understanding:** Utilizes advanced language processing to understand user queries in a conversational manner.
+- **Natural Language Understanding:** Utilizes advanced language processing to understand user queries conversationally.
   
-- **Multilingual Support:** Supports a variety of languages to cater to diverse passenger needs.
+- **Multilingual Support:** Supports various languages to cater to diverse passenger needs.
 
 - **Real-time Information:** Provides up-to-date information on train schedules, delays, and platform changes.
 
@@ -27,7 +27,7 @@ This repository contains the source code and resources for a railway's chatbot b
     ```bash
    New-Alias -Name python310 -value "yourPython3.10.exe path"
    ```
-3. **Create a python Virtual Environment**
+3. **Create a Python Virtual Environment**
     ```bash
     python310 -m venv venvChatbotRailways
     ```
@@ -46,11 +46,11 @@ This repository contains the source code and resources for a railway's chatbot b
     ```
 
 7. **Interact with the Chatbot:**
-    - Open a web browser and go to `http://localhost:5000` to interact with the chatbot through a simple web interface. under developemnt
+    - Open a web browser and go to `http://localhost:5000` to interact with the chatbot through a simple web interface (currently under development).
 
 ## Contribution Guidelines
 
-We welcome contributions! If you would like to contribute to the development of the Railways Chatbot
+We welcome contributions! If you would like to contribute to the development of the Railways Chatbot (This project is continuously evolving).
 
 ## License
 
