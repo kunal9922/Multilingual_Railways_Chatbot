@@ -3,5 +3,5 @@ from . import views
 
 # urlpatterns that define the URls and their function
 urlpatterns = [
-    path('hello/', views.say_hello)
+    path('', views.start_chat)
 ]

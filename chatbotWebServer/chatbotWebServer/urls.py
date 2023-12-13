@@ -20,5 +20,5 @@ from django.urls import path, include
 # Configuration of the App URL called 'chatRailways' in Django 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('chatRailways/', include('chatRailways.urls'))
+    path('', include('chatRailways.urls'))
 ]
