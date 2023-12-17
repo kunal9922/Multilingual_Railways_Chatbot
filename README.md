@@ -46,7 +46,7 @@ This repository contains the source code and resources for a railway's chatbot b
     ```
 
 7. **Interact with the Chatbot:**
-    - Open a web browser and go to `http://localhost:5000` to interact with the chatbot through a simple web interface (currently under development).
+    - Open a web browser and go to `http://localhost:8000` to interact with the chatbot through a simple web interface (currently under development).
 
 ## Contribution Guidelines
 
