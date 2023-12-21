@@ -24,7 +24,7 @@ class Bot:
         return botReply
 
 # Main code
-myRailwaysChatBot = Bot(r'Multilingual_Railways_Chatbot\data\indianRailwaysData.csv')
+
 # Example of the user query
 # "from Delhi to Jaipur what is the Train Departure time"
 # "provide the ticket price of the train goes from Chennai to Bangalore "
@@ -32,5 +32,5 @@ myRailwaysChatBot = Bot(r'Multilingual_Railways_Chatbot\data\indianRailwaysData.
 # "tell me the distance from Mumbai to Ahmedabad by train"
 # "show the train number goes from Pune to Mumbai"
 
-reply = myRailwaysChatBot.chat("What is the Train Name which operates from Delhi to Jaipur")
-print(reply)
+# reply = myRailwaysChatBot.chat("What is the Train Name which operates from Delhi to Jaipur")
+# print(reply)
