@@ -2,3 +2,4 @@ transformers
 pandas
 torch
 googletrans==4.0.0rc1
+Django
