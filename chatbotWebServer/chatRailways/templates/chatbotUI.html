@@ -11,6 +11,23 @@
 
 <body>
     <h1>Multilingual_Railways_Chatbot</h1>
+    <script src="{% static 'javascript/chatbot_scripts.js' %}"></script>
+        <form method="post" class="container" onsubmit="submitForm(event)">
+            <div>{% csrf_token %}
+                <h3>Enter Your Railway's Query</h3>
+                <textarea id="user-query" name="query" placeholder="Type your query..."></textarea>
+                <!-- <input id="user-query" type="text" name="query" placeholder="Type your query..."> -->
+                <button type="submit" class="icon-button">
+                    <img src="{% static 'images/send_icon.png' %}" alt="Send Icon" align="right"  height="40" width="40">
+                </button>
+            </div>
+        </form>
+        <div>
+            <h3>
+                Railways Response
+            </h3>
+            <textarea id="response" name="response" rows="10" cols="40" placeholder="Chatbot response"></textarea>
+        </div>
 </body>
 
 </html>
