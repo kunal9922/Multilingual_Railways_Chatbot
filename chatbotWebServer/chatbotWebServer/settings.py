@@ -51,6 +51,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Disable caching during development
+if DEBUG:
+    MIDDLEWARE += ['django.middleware.cache.UpdateCacheMiddleware']
+    CACHE_MIDDLEWARE_ALIAS = 'default'
+    CACHE_MIDDLEWARE_SECONDS = 1
+    CACHE_MIDDLEWARE_KEY_PREFIX = ''
+
 ROOT_URLCONF = 'chatbotWebServer.urls'
 
 TEMPLATES = [

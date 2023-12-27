@@ -1,0 +1,45 @@
+/* In your CSS file or in a style block in your Django HTML file */
+body{
+    font-family: sans-serif;
+    background-color: rgb(217, 217, 217);
+}
+h1{
+    padding-top: 100px;
+    padding-bottom: 50px;
+    position: sticky;
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+    opacity: 90%;
+    margin: auto;
+    justify-content: center;
+}
+.icon-button {
+    border: none; /* Remove button border */
+    padding: 10px 10px; /* Add padding */
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 10px;
+    cursor: pointer;
+    border-radius: 8px; /* Add rounded corners */
+}
+input{
+    padding: 20px ;
+    border-radius: 4px 2px;
+    margin: 10px;
+}
+ /* Optional: Adjust styles for better appearance */
+#user-query {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 40px; /* Set a minimum height */
+    max-height: 200px; /* Set a maximum height if needed */
+}
+div{
+        justify-content: center;
+        margin: auto;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        margin: 100;
+        padding: 20px;
+}
