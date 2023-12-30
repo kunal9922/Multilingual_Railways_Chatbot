@@ -1,7 +1,12 @@
 /* In your CSS file or in a style block in your Django HTML file */
 body{
     font-family: sans-serif;
-    background-color: rgb(217, 217, 217);
+    /* background-color: rgb(217, 217, 217); */
+    background-image: url('/static/images/greenTrainBackground.jpg');
+    background-size: cover; /* or 'contain' based on your preference */
+    background-position: center top;
+    font-size: x-large;
+    color:rgb(0, 0, 0);
 }
 h1{
     padding-top: 100px;
@@ -13,6 +18,9 @@ h1{
     opacity: 90%;
     margin: auto;
     justify-content: center;
+}
+h3{
+    color:rgb(45, 45, 45)
 }
 .icon-button {
     border: none; /* Remove button border */
