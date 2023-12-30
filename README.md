@@ -62,7 +62,12 @@ Feel free to reach out with any questions or feedback!
 
 Happy chatting! 🚂🤖
 
+## Screenshots
+![Screenshot 2023-12-30 220252](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/51cfd4c2-4875-433a-95ba-cf40221c9e3d)
+![Screenshot 2023-12-30 220441](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/cc0b14a3-5747-4c3f-a82e-1a2b404f539b)
+
+
 ## Behavioral diagram
-Request and response between the passenger and the chatbot with the help of the Django web framework on the web. This diagram is an **Activity Diagram** in the UML Behavioral Diagram category. This diagram shows how a passenger, a chatbot, and a railway database handle a train query. The diagram uses lines and arrows to show the flows and interactions of each component. The messages are labeled with the information or operation. For example, the first message is a user (passenger) request \"query about trains\", from the passenger to the chatbot, followed by the AI (chatbot) response to resolve the query.
+A web-based chatbot for train queries using Django. This is a UML Activity Diagram that shows the steps and messages between a passenger, a chatbot, and a railway database. For example, the passenger asks "query about trains" and the chatbot replies with the answer.
 
 ![railwaysChatbotFlow](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/ccae208e-0b3a-485b-b1bc-5aa96f92b021)
