@@ -63,8 +63,9 @@ Feel free to reach out with any questions or feedback!
 Happy chatting! 🚂🤖
 
 ## Screenshots
-![Screenshot 2023-12-30 220252](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/51cfd4c2-4875-433a-95ba-cf40221c9e3d)
-![Screenshot 2023-12-30 220441](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/cc0b14a3-5747-4c3f-a82e-1a2b404f539b)
+![image](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/9bc80a46-c15e-47a8-9a2e-128f2603b1dd)
+![image](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/5cbd3396-c347-40ad-a745-92e81d50d464)
+![image](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/ddb0c68b-87bd-40e1-b24f-0ae0de744b67)
 
 
 ## Behavioral diagram
