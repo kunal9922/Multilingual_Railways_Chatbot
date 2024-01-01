@@ -3,8 +3,8 @@ from django.http import HttpResponse
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from chatRailways.chatbotModule.chatbot import Bot
+from chatRailways.chatbotModule.textTranslator import TextTranslator
 import json
-
 
 # Create your views here.
 def renderWebPage(request):
@@ -20,6 +20,8 @@ def renderWebPage(request):
 
 # Railways chatbot Object
 myRailwaysChatBot = Bot(r'chatRailways\chatbotModule\data\indianRailwaysData.csv')
+# Translator chatbot Object
+trans = TextTranslator()
 
 def startChat(request):
     """
@@ -33,9 +35,20 @@ def startChat(request):
     if request.method == 'POST':
         data = json.loads(request.body)
         query = data.get('userQuery')
-        print(query)
-        responseOfTheRequest = myRailwaysChatBot.chat(query)
-        print(responseOfTheRequest)
-        result = {'response': responseOfTheRequest}
+        langCode = data.get('selectedLanguage')
+        print(query, langCode)
+        # Converting userQuery into English for the model understandings purpose
+        # Translation layer 
+        transText = trans.translate(query, 'en')
+        # print(transText.text)
+        botResponse = myRailwaysChatBot.chat(transText.text)
+        
+        # Translation layer 
+        transText = trans.translate(botResponse, langCode)
+        
+        print(botResponse)
+        
+        # Sends response back to the frontend web page
+        result = {'response': transText.text}
         return JsonResponse(result)
     

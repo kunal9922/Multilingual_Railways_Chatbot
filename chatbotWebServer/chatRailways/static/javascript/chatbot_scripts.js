@@ -16,9 +16,12 @@ function getCookie(name) {
 }
 
 function takeUserQuery() {
-    /*Takes request user's input query from frontend send to the backend server in Json to resolve the query
-    then backend server responses in json finally display the response  */
+    /*Takes user's input query as request from frontend then send to the backend server in Json to resolve the query
+    then backend server responses in json, finally display the response  */
     const userQuery = document.getElementById('user-query').value;
+    // Translation values
+    const selectedLanguage = document.getElementById('language-select').value;
+    console.log(document.getElementById('language-select').value);
     // AJAX request to Django view
     fetch('/chatbot/', {
         method: 'POST',
@@ -26,7 +29,7 @@ function takeUserQuery() {
             'Content-Type': 'application/json',
             'X-CSRFToken': getCookie('csrftoken')  // Include CSRF token here
         },
-        body: JSON.stringify({ "userQuery": userQuery })
+        body: JSON.stringify({ "userQuery": userQuery, "selectedLanguage": selectedLanguage})
     })
     .then(response => response.json())
     .then(data => {
@@ -37,6 +40,7 @@ function takeUserQuery() {
         console.error('Error:', error);
     });
 }
+
 function submitForm(event) {
     event.preventDefault(); // Prevent default form submission
     takeUserQuery(); // Call your existing function

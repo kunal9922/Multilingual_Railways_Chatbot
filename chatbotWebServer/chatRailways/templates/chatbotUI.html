@@ -14,7 +14,20 @@
     <script src="{% static 'javascript/chatbot_scripts.js' %}"></script>
         <form method="post" class="container" onsubmit="submitForm(event)">
             <div>{% csrf_token %}
-                <h3>Enter Your Railway's Query</h3>
+                <label for="language-select">Select Language:</label>
+                <select id="language-select">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="mr">Marathi</option>
+                    <option value="ta">Tamil</option>
+                    <option value="fr">French</option>
+                    <option value="it">Italian</option>
+                    <option value="ja">Japanese</option>
+                    <!-- Add more language options as needed -->
+                </select>
+            </div>
+            <div>{% csrf_token %}
+                <label for="user-query">Enter Your Railway's Query</label>
                 <textarea id="user-query" name="query" placeholder="Type your query..."></textarea>
                 <!-- <input id="user-query" type="text" name="query" placeholder="Type your query..."> -->
                 <button type="submit" class="icon-button">
@@ -23,9 +36,7 @@
             </div>
         </form>
         <div>
-            <h3>
-                Railways Response
-            </h3>
+            <label for="response">Railways Response</label>
             <textarea id="response" name="response" rows="5" cols="40" placeholder="Chatbot response"></textarea>
         </div>
 </body>
