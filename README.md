@@ -1,7 +1,5 @@
 # Multilingual_Railways_Chatbot
 
-## Railways Chatbot using Large Language Model
-
 ## Overview
 
 This repository contains the source code and resources for a railway's chatbot built using a Large Language Model. The chatbot is designed to assist railway passengers by providing information on train schedules, platform details, delays, and other related inquiries. It leverages a state-of-the-art large language model to understand natural language queries and deliver accurate responses.
