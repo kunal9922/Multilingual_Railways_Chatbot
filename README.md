@@ -39,14 +39,17 @@ This repository contains the source code and resources for a railway's chatbot b
     ```bash
     pip install -r requirements.txt
     ```
-
-6. **Run the Chatbot:**
+6. **Shift to the Django Server Directory**
+   ```bash
+   cd chatbotWebServer\
+   ```
+6. **Run the Django Server for the Chatbot:**
     ```bash
-    python chatbot.py
+    python manage.py runserver
     ```
 
 7. **Interact with the Chatbot:**
-    - Open a web browser and go to `http://localhost:8000` to interact with the chatbot through a simple web interface (currently under development).
+    - Open a web browser and go to `http://localhost:8000` to interact with the chatbot through a simple web interface.
 
 ## Contribution Guidelines
 
