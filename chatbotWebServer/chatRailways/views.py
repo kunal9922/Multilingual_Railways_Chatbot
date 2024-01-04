@@ -19,7 +19,7 @@ def renderWebPage(request):
     return render(request, 'chatbotUI.html')
 
 # Railways chatbot Object
-myRailwaysChatBot = Bot(r'chatRailways\chatbotModule\data\indianRailwaysData.csv')
+myRailwaysChatBot = Bot()
 # Translator chatbot Object
 trans = TextTranslator()
 
