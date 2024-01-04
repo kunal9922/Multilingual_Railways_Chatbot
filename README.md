@@ -41,12 +41,14 @@ This repository contains the source code and resources for a railway's chatbot b
    ```bash
    cd chatbotWebServer\
    ```
-6. **Run the Django Server for the Chatbot:**
+7. **Download the LLAMA-2-7B Model from https://huggingface.co/meta-llama**
+      Save the LLM model into this "\chatRailways\chatbotModule\models"
+   
+9. **Run the Django Server for the Chatbot:**
     ```bash
     python manage.py runserver
     ```
-
-7. **Interact with the Chatbot:**
+10. **Interact with the Chatbot:**
     - Open a web browser and go to `http://localhost:8000` to interact with the chatbot through a simple web interface.
 
 ## Contribution Guidelines
@@ -64,9 +66,9 @@ Feel free to reach out with any questions or feedback!
 Happy chatting! 🚂🤖
 
 ## Screenshots
-![image](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/9bc80a46-c15e-47a8-9a2e-128f2603b1dd)
-![image](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/5cbd3396-c347-40ad-a745-92e81d50d464)
-![image](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/ddb0c68b-87bd-40e1-b24f-0ae0de744b67)
+![Screenshot 2024-01-04 194234](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/d4025116-1d4f-4940-ab5c-40cf6fefa04b)
+![Screenshot 2024-01-04 194518](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/3ee47b74-3216-4699-8b00-f010bd8687ec)
+![Screenshot 2024-01-04 200511](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/a2baa679-4cc9-4827-953e-6b4e6cb3ef99)
 
 
 ## Behavioral diagram
