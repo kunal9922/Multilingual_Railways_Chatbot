@@ -5,6 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from chatRailways.chatbotModule.chatbot import Bot
 from chatRailways.chatbotModule.textTranslator import TextTranslator
 import json
+from chatRailways.chatbotModule.transcriber import MessageTranscriber
 
 # Create your views here.
 def renderWebPage(request):
@@ -22,6 +23,29 @@ def renderWebPage(request):
 myRailwaysChatBot = Bot()
 # Translator chatbot Object
 trans = TextTranslator()
+msgTrans = MessageTranscriber()
+
+@csrf_exempt
+def receive_audio(request):
+    if request.method == 'POST':
+        audio_data = request.FILES.get('audio')
+        print(type(audio_data.chunks()))
+        if audio_data is None:
+            return JsonResponse({'success': False, 'error': 'No audio data received in the request.'})
+
+        try:
+            # Process the audio data (you can use it, save it, etc.)
+            # For example, save the audio file to a directory
+            with open(r'chatRailways\static\audio\voice_input.wav', 'wb') as destination:
+                for chunk in audio_data.chunks():
+                    destination.write(chunk)
+                    
+            # Now processing the audio data for the voice to text
+            text_result, lang = msgTrans.voice_to_text(r'chatRailways\static\audio\voice_input.wav')
+            return JsonResponse({'success': True, 'text': text_result, 'langCode': lang})
+        except Exception as e:
+            return JsonResponse({'success': False, 'error': str(e)})
+    return JsonResponse({'success': False, 'error': 'Invalid request method.'})
 
 def startChat(request):
     """
@@ -51,4 +75,3 @@ def startChat(request):
         # Sends response back to the frontend web page
         result = {'response': transText.text}
         return JsonResponse(result)
-    

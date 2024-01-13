@@ -30,6 +30,30 @@ h1{
     margin: auto;
     justify-content: center;
 }
+#playPauseButton {
+    background-color: transparent;
+    justify-items: center;
+    color: #fff; 
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+  }
+  #playPauseButton img {
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+    width: 100%; /* Ensure the image fills the container */
+  }
+  #playPauseButton:hover {
+    background-color: #97e8c5; /* Darker color on hover */
+  }
+  
+  #playPauseButton:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(86, 177, 237, 0.7); /* Light box shadow on focus */
+  }
+
 label{
     color:rgb(0, 0, 0);
     font-weight: bold;

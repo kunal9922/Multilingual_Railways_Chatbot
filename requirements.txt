@@ -5,3 +5,4 @@ faiss-cpu
 llama-cpp-python
 googletrans==4.0.0rc1
 Django
+openai-whisper

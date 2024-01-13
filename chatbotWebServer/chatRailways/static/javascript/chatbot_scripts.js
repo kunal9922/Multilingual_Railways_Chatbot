@@ -15,6 +15,99 @@ function getCookie(name) {
     return cookieValue;
 }
 
+var isRecording = false;
+function togglePlayPause() {
+    /**
+     * The function toggles between starting and stopping a recording, changing the icon and state
+     * accordingly.
+     */
+    var button = document.getElementById('playPauseButton');
+    var icon = document.getElementById('icon');
+
+    if (!isRecording) {
+        // Change to pause icon
+        icon.src = pauseIconUrl;
+        // Start recording
+        startRecording();
+        isRecording = true;
+    } else {
+        // Change to play icon
+        icon.src = recordIconUrl;
+        // Stop recording
+        stopRecording();
+        isRecording = false;  
+    }
+}
+
+let mediaRecorder;
+let audioChunks = [];
+
+function startRecording() {
+    navigator.mediaDevices.getUserMedia({ audio: true })
+        .then((stream) => {
+            mediaRecorder = new MediaRecorder(stream);
+
+            mediaRecorder.ondataavailable = (event) => {
+                if (event.data.size > 0) {
+                    audioChunks.push(event.data);
+                }
+            };
+
+            mediaRecorder.onstop = () => {
+                if (audioChunks.length > 0) {
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                    const audioUrl = URL.createObjectURL(audioBlob);
+
+                    // Send the audioBlob to Django using a fetch request
+                    sendAudioToDjango(audioBlob);
+
+                    audioChunks = [];
+                } else {
+                    console.warn('No audio data recorded.');
+                }
+            };
+
+            mediaRecorder.start();
+            // startRecordingBtn.disabled = true;
+            // stopRecordingBtn.disabled = false;
+        })
+        .catch((error) => {
+            console.error('Error accessing microphone:', error);
+        });
+}
+
+function stopRecording() {
+    if (mediaRecorder) {
+        mediaRecorder.stop();
+    }
+}
+
+function sendAudioToDjango(audioBlob) {
+    // Create a FormData object to send the audio file
+    const formData = new FormData();
+    formData.append('audio', audioBlob, 'voice_input.wav');
+
+    // Send the FormData to your Django server using fetch
+    fetch('/speech/', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-CSRFToken': getCookie('csrftoken')  // Include CSRF token here
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Server response:', data);
+        document.getElementById('user-query').value = data.text;
+        var selectElement = document.getElementById('language-select');
+        // Set the value to 'based on the input voice' (Urdu)
+        selectElement.value = data.langCode;
+    })
+    .catch(error => {
+        console.error('Error sending audio to Django:', error);
+    });
+}
+
 function takeUserQuery() {
     /*Takes user's input query as request from frontend then send to the backend server in Json to resolve the query
     then backend server responses in json, finally display the response  */

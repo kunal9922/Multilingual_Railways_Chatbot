@@ -11,6 +11,11 @@
 
 <body>
     <h1>Multilingual_Railways_Chatbot</h1>
+    <!-- In your HTML template -->
+    <script>
+        var recordIconUrl = "{% static 'images/start_voice_recording_icon.png' %}";
+        var pauseIconUrl = "{% static 'images/stop_voice_recording_icon.png' %}";
+    </script>
     <script src="{% static 'javascript/chatbot_scripts.js' %}"></script>
         <form method="post" class="container" onsubmit="submitForm(event)">
             <div>{% csrf_token %}
@@ -18,6 +23,7 @@
                 <select id="language-select">
                     <option value="en">English</option>
                     <option value="hi">Hindi</option>
+                    <option value="ur">urdu</option>
                     <option value="mr">Marathi</option>
                     <option value="ta">Tamil</option>
                     <option value="fr">French</option>
@@ -29,7 +35,9 @@
             <div>{% csrf_token %}
                 <label for="user-query">Enter Your Railway's Query</label>
                 <textarea id="user-query" name="query" placeholder="Type your query..."></textarea>
-                <!-- <input id="user-query" type="text" name="query" placeholder="Type your query..."> -->
+                <button id="playPauseButton" onclick="togglePlayPause()" type="button" title="Record/Pause">
+                    <img id="icon" src="{% static 'images/start_voice_recording_icon.png' %}" height="40" width="40" alt="">
+                </button>
                 <button type="submit" class="icon-button">
                     <img src="{% static 'images/send_icon.png' %}" alt="Send Icon" align="right"  height="40" width="40">
                 </button>
