@@ -70,6 +70,11 @@ Happy chatting! 🚂🤖
 ![Screenshot 2024-01-04 194518](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/3ee47b74-3216-4699-8b00-f010bd8687ec)
 ![Screenshot 2024-01-04 200511](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/a2baa679-4cc9-4827-953e-6b4e6cb3ef99)
 
+# Demo on voice-to-text translation feature
+https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/6c5f21e6-abd8-426d-b599-7930cd7ee6c7
+# Passenger's voice language detection. Example of French language
+https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/981e3e3c-beb5-46fc-b456-e34aea2b795d
+
 
 ## Behavioral diagram
 A web-based chatbot for train queries using Django. This is a UML Activity Diagram that shows the steps and messages between a passenger, a chatbot, and a railway database. For example, the passenger asks "query about trains" and the chatbot replies with the answer.
