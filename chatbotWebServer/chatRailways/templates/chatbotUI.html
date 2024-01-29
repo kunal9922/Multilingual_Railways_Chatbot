@@ -15,6 +15,8 @@
     <script>
         var recordIconUrl = "{% static 'images/start_voice_recording_icon.png' %}";
         var pauseIconUrl = "{% static 'images/stop_voice_recording_icon.png' %}";
+        var speakIconUrl = "{% static 'images/speakIcon.png' %}";
+        var pauseSpeakIconUrl = "{% static 'images/mute.png' %}";
     </script>
     <script src="{% static 'javascript/chatbot_scripts.js' %}"></script>
         <form method="post" class="container" onsubmit="submitForm(event)">
@@ -36,7 +38,7 @@
                 <label for="user-query">Enter Your Railway's Query</label>
                 <textarea id="user-query" name="query" placeholder="Type your query..."></textarea>
                 <button id="playPauseButton" onclick="togglePlayPause()" type="button" title="Record/Pause">
-                    <img id="icon" src="{% static 'images/start_voice_recording_icon.png' %}" height="40" width="40" alt="">
+                    <img id="iconRecord" src="{% static 'images/start_voice_recording_icon.png' %}" height="40" width="40" alt="">
                 </button>
                 <button type="submit" class="icon-button">
                     <img src="{% static 'images/send_icon.png' %}" alt="Send Icon" align="right"  height="40" width="40">
@@ -46,6 +48,13 @@
         <div>
             <label for="response">Railways Response</label>
             <textarea id="response" name="response" rows="5" cols="40" placeholder="Chatbot response"></textarea>
+            <button id="speakPauseButton" onclick="toggleSpeakPause()" type="button" title="Speak/Pause">
+                <img id="iconSpeak" src="{% static 'images/speakIcon.png' %}" height="40" width="40" alt="">
+                <audio id="audioPlayer">
+                    <!-- Add your audio file source here -->
+                    <source src="{% static 'audio/' %}" type="audio/wav">  <!-- Replace with the correct audio URL and type -->
+                </audio>
+            </button>
         </div>
 </body>
 

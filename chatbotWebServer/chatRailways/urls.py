@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.renderWebPage),
     path('chatbot/', views.startChat, name='startChat'),
     path('speech/', views.receive_audio, name='receiveAudio'),
+    path('audio/', views.get_chatbot_speech, name='getAudio'),
 ]
 # Add this line at the end of your urlpatterns
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

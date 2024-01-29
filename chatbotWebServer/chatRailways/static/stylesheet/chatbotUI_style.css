@@ -30,7 +30,7 @@ h1{
     margin: auto;
     justify-content: center;
 }
-#playPauseButton {
+#playPauseButton, #speakPauseButton {
     background-color: transparent;
     justify-items: center;
     color: #fff; 
@@ -40,12 +40,12 @@ h1{
     cursor: pointer;
     transition: background-color 0.3s ease; /* Smooth transition effect */
   }
-  #playPauseButton img {
+  #playPauseButton img, #speakPauseButton img {
     display: block;
     margin: 0 auto; /* Center the image horizontally */
     width: 100%; /* Ensure the image fills the container */
   }
-  #playPauseButton:hover {
+  #playPauseButton:hover, #speakPauseButton:hover {
     background-color: #97e8c5; /* Darker color on hover */
   }
   

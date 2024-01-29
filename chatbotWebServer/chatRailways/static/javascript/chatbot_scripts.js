@@ -22,7 +22,7 @@ function togglePlayPause() {
      * accordingly.
      */
     var button = document.getElementById('playPauseButton');
-    var icon = document.getElementById('icon');
+    var icon = document.getElementById('iconRecord');
 
     if (!isRecording) {
         // Change to pause icon
@@ -59,7 +59,7 @@ function startRecording() {
                     const audioUrl = URL.createObjectURL(audioBlob);
 
                     // Send the audioBlob to Django using a fetch request
-                    sendAudioToDjango(audioBlob);
+                    sendSpeechToDjango(audioBlob);
 
                     audioChunks = [];
                 } else {
@@ -82,7 +82,7 @@ function stopRecording() {
     }
 }
 
-function sendAudioToDjango(audioBlob) {
+function sendSpeechToDjango(audioBlob) {
     // Create a FormData object to send the audio file
     const formData = new FormData();
     formData.append('audio', audioBlob, 'voice_input.wav');
@@ -105,6 +105,84 @@ function sendAudioToDjango(audioBlob) {
     })
     .catch(error => {
         console.error('Error sending audio to Django:', error);
+    });
+}
+
+var isSpeaking = false;
+function toggleSpeakPause() {
+    /**
+     * The function toggles between starting and stopping a speech, changing the icon and state
+     * accordingly.
+     */
+    if (document.getElementById('response').value == ""){
+        return;
+    }
+    var button = document.getElementById('speakPauseButton');
+    var iconSpeak = document.getElementById('iconSpeak');
+
+    if (!isSpeaking) {
+        // Change to pause icon
+        iconSpeak.src = pauseSpeakIconUrl;
+
+        // Start Speaking
+        isSpeaking = true;
+        fetchAndPlayAudio();
+    } else {
+        // Change to play icon
+        iconSpeak.src = speakIconUrl;
+        // Stop Speaking
+        isSpeaking = false;
+        pauseAudio();
+    }
+}
+
+// Function to play audio
+var audio;
+function playAudio(audioUrl) {
+    // Create an audio element
+    audio = new Audio(audioUrl);
+
+    // Play the audio
+    audio.play();
+    // Check if the audio is still playing
+    var checkAudioStatus = setInterval(function() {
+        if (audio.paused) {
+            console.log('Audio playback stopped.');
+            // Change to pause icon
+            iconSpeak.src = speakIconUrl;
+            clearInterval(checkAudioStatus); // Stop checking
+        } else {
+            console.log('Audio is still playing...');
+        }
+    }, 1000); // Check every second
+}
+function pauseAudio() {
+    // If audio is playing, pause it
+    audio.pause();
+}
+
+// Function to fetch and play audio
+function fetchAndPlayAudio() {
+    // Replace with the correct URL to fetch audio from Django
+    var audioUrl = '/audio/';
+
+    // Append timestamp to URL to prevent caching
+    audioUrl += '?timestamp=' + new Date().getTime();
+
+    // Fetch audio using GET method
+    fetch(audioUrl, {
+        method: 'GET',
+    })
+    .then(response => {
+        if (response.ok) {
+            // If response is OK, play the audio
+            playAudio(audioUrl);
+        } else {
+            console.error('Failed to fetch audio:', response.statusText);
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching audio:', error);
     });
 }
 

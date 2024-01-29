@@ -6,7 +6,7 @@ from chatRailways.chatbotModule.chatbot import Bot
 from chatRailways.chatbotModule.textTranslator import TextTranslator
 import json
 from chatRailways.chatbotModule.transcriber import MessageTranscriber
-
+from django.http import FileResponse
 # Create your views here.
 def renderWebPage(request):
     """
@@ -48,6 +48,7 @@ def receive_audio(request):
     return JsonResponse({'success': False, 'error': 'Invalid request method.'})
 
 def startChat(request):
+    global result, langCode
     """
     The function `startChat` takes a user query as input, passes it to a chatbot, and returns the
     response of the chatbot as a JSON object.
@@ -75,3 +76,12 @@ def startChat(request):
         # Sends response back to the frontend web page
         result = {'response': transText.text}
         return JsonResponse(result)
+
+@csrf_exempt
+def get_chatbot_speech(request):
+    msgTrans.text_to_voice(result['response'], langCode)
+    # Assuming 'path_to_audio_file' is the path to your audio file
+    path_to_audio_file = r'chatRailways\static\audio\textToVoice.wav'
+    
+    # Return the audio file as a response
+    return FileResponse(open(path_to_audio_file, 'rb'), content_type='audio/wav')

@@ -1,4 +1,5 @@
 import whisper
+from gtts import gTTS
 # import pprint
 
 class MessageTranscriber():
@@ -18,3 +19,17 @@ class MessageTranscriber():
         text = self.model.transcribe(audioFile)
         # pprint.pprint(text)
         return text['text'], text['language']
+    
+    def text_to_voice(self, text: str, langCode: str):
+        """
+        The function `text_to_voice` generates a voice from the given text for a specified language code
+        and saves it as a WAV file.
+        
+        :param text: The text parameter is the input text that you want to convert into speech. It can
+        be string
+        :param langCode: The langCode parameter is a language code that specifies the language of the
+        text you want to convert to voice. For example, "en" for English, "fr" for French, "es" for
+        Spanish, etc
+        """
+        speech = gTTS(text=text, lang=langCode, slow=False, tld="com.au")
+        speech.save(r"chatRailways\static\audio\textToVoice.wav")
