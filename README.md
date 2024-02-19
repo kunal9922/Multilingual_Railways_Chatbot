@@ -81,3 +81,9 @@ https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/fc0c5
 A web-based chatbot for train queries using Django. This UML Activity Diagram shows the steps and messages between a passenger, a chatbot, and a railway database. For example, the passenger asks "query about trains" and the chatbot replies with the answer.
 
 ![railwaysChatbotFlow](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/ccae208e-0b3a-485b-b1bc-5aa96f92b021)
+
+## Chatbot that can interact with CSV files
+This diagram shows how to build a chatbot that can interact with CSV files. The chatbot extracts data content from a CSV file and converts it into embeddings using a vector store. Then, it builds a semantic index based on FAISS to perform semantic search on the data. The chatbot can answer user queries by converting them into query embeddings and searching for the most relevant answers in the knowledge base.
+
+![chatBot_arch](https://github.com/kunal9922/Multilingual_Railways_Chatbot/assets/53283003/54e1f9ef-0484-4fff-b773-cbac2789e577)
+
