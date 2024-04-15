@@ -19,10 +19,9 @@ This repository contains the source code and resources for a railway's chatbot b
 1. **Clone the Repository:**
     ```bash
     git clone https://github.com/kunal9922/Multilingual_Railways_Chatbot.git
-    cd Multilingual_Railways_Chatbot
     ```
 2. **Make an alias for Windows PowerShell** 
-    ```bash
+    ```powershell
    New-Alias -Name python310 -value "yourPython3.10.exe path"
    ```
 3. **Create a Python Virtual Environment**
@@ -33,7 +32,20 @@ This repository contains the source code and resources for a railway's chatbot b
     ```bash
     venvChatbotRailways\Scripts\activate
     ```
-5. **Install Dependencies:**
+  ### Voice-to-Text Transcriber Whisper also requires FFmpeg, an audio-processing library.
+5. **Chocolatey a Windows package manager to install https://chocolatey.org/install**
+    ```powershell
+    choco install ffmpeg
+    ```
+6. **Homebrew a MacOS package manager to install https://brew.sh/**
+    ```bash
+    brew install ffmpeg
+    ```
+7. **For Linux OS**
+   ```bash
+   sudo apt update && sudo apt install ffmpeg
+   ```
+9. **Install Dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
@@ -42,7 +54,7 @@ This repository contains the source code and resources for a railway's chatbot b
    cd chatbotWebServer\
    ```
 7. **Download the LLAMA-2-7B Model from https://huggingface.co/meta-llama**
-      Save the LLM model into this "\chatRailways\chatbotModule\models"
+      Save the LLM model into this directory "\chatRailways\chatbotModule\models"
    
 9. **Run the Django Server for the Chatbot:**
     ```bash
