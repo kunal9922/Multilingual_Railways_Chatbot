@@ -7,6 +7,8 @@ from chatRailways.chatbotModule.textTranslator import TextTranslator
 import json
 from chatRailways.chatbotModule.transcriber import MessageTranscriber
 from django.http import FileResponse
+import speech_recognition as sr
+from pydub import AudioSegment
 # Create your views here.
 def renderWebPage(request):
     """
@@ -27,6 +29,17 @@ msgTrans = MessageTranscriber()
 
 @csrf_exempt
 def receive_audio(request):
+    """
+    Handles incoming POST requests containing audio data for speech recognition.
+
+    Args:
+        request (HttpRequest): The incoming HTTP request.
+
+    Returns:
+        JsonResponse: A JSON response containing the recognized text and language code (if successful),
+                      or an error message (if unsuccessful).
+    """
+    global text_result
     if request.method == 'POST':
         audio_data = request.FILES.get('audio')
         print(type(audio_data.chunks()))
@@ -36,12 +49,26 @@ def receive_audio(request):
         try:
             # Process the audio data (you can use it, save it, etc.)
             # For example, save the audio file to a directory
-            with open(r'chatRailways\static\audio\voice_input.wav', 'wb') as destination:
+            with open(r'chatRailways\static\audio\voice_input.wav', 'wb+') as destination:
                 for chunk in audio_data.chunks():
                     destination.write(chunk)
                     
-            # Now processing the audio data for the voice to text
-            text_result, lang = msgTrans.voice_to_text(r'chatRailways\static\audio\voice_input.wav')
+            lang = request.POST.get('lang')  # Retrieve 'lang' parameter from POST data
+            # for hindi language speech recognition 
+            if lang=="hi":
+                sound = AudioSegment.from_file(r"chatRailways\static\audio\voice_input.wav")
+                sound.export(r"chatRailways\static\audio\voice_input.wav", format="wav")
+                try:
+                    r = sr.Recognizer()
+                    with sr.AudioFile(r"chatRailways\static\audio\voice_input.wav") as source:
+                        r.adjust_for_ambient_noise(source, duration=1)  # Adjust for ambient noise
+                        audio = r.record(source)
+                    # Use Google speech recognition for Hindi (hi-IN)
+                    text_result = r.recognize_google(audio, language="hi-IN")
+                except Exception as e:
+                    print(e)
+            else:
+                text_result, lang = msgTrans.voice_to_text(r'chatRailways\static\audio\voice_input.wav')
             return JsonResponse({'success': True, 'text': text_result, 'langCode': lang})
         except Exception as e:
             return JsonResponse({'success': False, 'error': str(e)})
@@ -79,6 +106,15 @@ def startChat(request):
 
 @csrf_exempt
 def get_chatbot_speech(request):
+    """
+    Handles incoming POST requests for generating speech from the chatbot's response.
+
+    Args:
+        request (HttpRequest): The incoming HTTP request.
+
+    Returns:
+        FileResponse: An audio file (in WAV format) containing the synthesized speech.
+    """
     msgTrans.text_to_voice(result['response'], langCode)
     # Assuming 'path_to_audio_file' is the path to your audio file
     path_to_audio_file = r'chatRailways\static\audio\textToVoice.wav'

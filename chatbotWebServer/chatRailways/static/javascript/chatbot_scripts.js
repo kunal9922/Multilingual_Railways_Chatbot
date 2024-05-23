@@ -85,8 +85,11 @@ function stopRecording() {
 function sendSpeechToDjango(audioBlob) {
     // Create a FormData object to send the audio file
     const formData = new FormData();
-    formData.append('audio', audioBlob, 'voice_input.wav');
-
+    let selectedLang = document.getElementById('language-select');
+    // formData.append('audio', audioBlob, 'lang', selectElement);
+    // Append the audio file and language selection to FormData
+    formData.append('audio', audioBlob);
+    formData.append('lang', selectedLang.value);
     // Send the FormData to your Django server using fetch
     fetch('/speech/', {
         method: 'POST',
@@ -99,9 +102,9 @@ function sendSpeechToDjango(audioBlob) {
     .then(data => {
         console.log('Server response:', data);
         document.getElementById('user-query').value = data.text;
-        var selectElement = document.getElementById('language-select');
+        //var selectElement = document.getElementById('language-select');
         // Set the value to 'based on the input voice' (Urdu)
-        selectElement.value = data.langCode;
+        selectedLang.value = data.langCode;
     })
     .catch(error => {
         console.error('Error sending audio to Django:', error);
