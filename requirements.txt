@@ -7,3 +7,5 @@ googletrans==4.0.0rc1
 Django
 openai-whisper
 gTTS
+SpeechRecognition
+pydub
